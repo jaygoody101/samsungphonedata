@@ -1,0 +1,80 @@
+Codebook for Samsung Phone Dataset 
+
+
+subject
+Factor: [1,...,30]
+identifier for subject in study
+
+activity
+Factor: ["walking", "walkingupstairs","walkingdownstairs","sitting","standing","laying"]
+identifies activity while data were being collected
+
+direction
+Factor: ['xdirection", "ydirection", "zdirection", "magnitude"]
+identify the axial direction of the signal (x,y,z); and the Euclidean norm magnitude calculated from those signals
+
+The signals are average means and average standard deviations for each combination of subject, activity, and direction
+
+Each original individual data stream was a times series collected either by an accelomerator or gyroscope in a given direction.
+
+These were further separated into "Body" and "Gravity" signals as described below.
+
+The first part of each variable name "freq" or "time" indicates whether the data were analyzed in the frequency or time domains.
+
+The second part indicates whethet it is Body or Gravity signal.
+
+The third part indicates whether it was measured with the accelerometer or gyrosope
+
+An auxiliary signal was used to obtain a "jerk" signal as described below; if "jerk" is present in the name then the column will contain this derived variable.
+
+The last part of the name indicates whether the "mean" signal or "standard deviation" signal was considered.
+
+When an original variable name contains "XYZ", it was actually represented by three separate variables, with and X, Y, or a Z indicated, respectively.
+
+The 18 variables were all normalized to be in the range [-1,1] prior to determination of summaary statistics.
+
+The new and original variables are:
+
+freqbodyaccelerometermean and freqbodyaccelerometerstdev
+(based on original variables fBodyAcc-XYZ and fBodyAccMag)
+
+freqbodyaccelerometerjerkmean and freqbodyaccelerometerjerkstdev
+(based on original variables fBodyAccJerk-XYZ and fBodyAccJerkMag)
+
+freqbodygyroscopejerkmean and freqbodygyroscopejerkstdev
+(based on original variable fBodyGyroJerkMag for which directional data were not provided)
+
+freqbodygyroscopemean and freqbodygyroscopestdev
+(based on original variables fBodyGyro-XYZ and fBodyGyroMag)
+
+timebodyaccelerometermean and timebodyaccelerometerstdev
+(based on original variables tBodyAcc-XYZ and tBodyAccMag)
+
+timebodyaccelerometerjerkmean and timebodyaccelerometerjerkstdev
+(based on original variables tBodyAccJerk-XYZ and tBodyAccJerkMag)
+
+timebodygyroscopejerkmean and timebodygyroscopejerkstdev
+(based on original variables tBodyGyroJerk-XYZ and tBodyGyroJerkMag)
+
+timebodygyroscopemean and timebodygyroscopestdev
+(based on original variables tBodyGyro-XYZ and tBodyGyroMag)
+
+timegravityaccelerometermean and timegravityaccelerometerstdev
+(based on original variables tGravityAcc-XYZ tGravityAccMag)
+
+
+
+
+
+From "Original Description" of this dataset
+
+
+The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals tAcc-XYZ and tGyro-XYZ. These time domain signals (prefix 't' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (tBodyAcc-XYZ and tGravityAcc-XYZ) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. 
+
+Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (tBodyAccJerk-XYZ and tBodyGyroJerk-XYZ). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (tBodyAccMag, tGravityAccMag, tBodyAccJerkMag, tBodyGyroMag, tBodyGyroJerkMag). 
+
+Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing fBodyAcc-XYZ, fBodyAccJerk-XYZ, fBodyGyro-XYZ, fBodyAccJerkMag, fBodyGyroMag, fBodyGyroJerkMag. (Note the 'f' to indicate frequency domain signals). 
+
+
+
+
